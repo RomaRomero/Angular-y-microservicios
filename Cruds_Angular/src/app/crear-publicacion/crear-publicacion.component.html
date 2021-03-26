@@ -1,0 +1,45 @@
+
+<br>
+<div class="padre">
+    <button class="btn btn-info "   routerLink=""> Regresar</button>
+    <div>
+        <h1>Crear Autor</h1>
+    </div>
+    <form action="/action_page.php">
+    <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="FormGroup">
+                <label for="name">Titulo :</label>
+                <input type="text" class="form-control" id="titulo" required [(ngModel)]="noticia.titulo" name="titulo"
+                    placeholder=" Ingrese texto..">
+            </div>
+            <div class="form-group">
+                <label for="name">Cuerpo de publicacion : </label>
+                <input type="text" class="form-control" id="cuerpo" required [(ngModel)]="noticia.cuerpo"
+                    name="cuerpo" placeholder=" Ingrese texto..">
+            </div>
+            <div class="form-group">
+                <label for="name">Fecha de publicación :</label>
+                <input type="text" class="form-control" id="fecha" required [(ngModel)]="noticia.fechapbl" name="fecha" placeholder="texto..">
+            </div>
+            <button type="menu" class="btn btn-outline-danger" (click)="noSubmit()">Regresar</button>
+            <button type="submit" class="btn btn-outline-success" >Continuar</button>
+        </form>
+    </div>
+    <div [hidden]="!submitted">
+        <div class="alert alert-success">
+            <strong>Informacion Registrada exitosamente!</strong>
+        </div>
+        <div class="toast">
+            <div class="toast-header">
+                Toast Header
+            </div>
+            <div class="toast-body">
+                Some text inside the toast body
+            </div>
+        </div>
+        <button class="btn btn-outline-success" (click)="newNoticia()">Add</button>
+    </div>
+    </form>
+</div>
+<br>>
