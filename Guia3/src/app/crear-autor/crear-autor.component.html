@@ -1,0 +1,62 @@
+
+<br>
+<div class="padre">
+    <button class="btn btn-info "   routerLink=""> Regresar</button>
+    <div>
+        <h1>Crear Autor</h1>
+    </div>
+    <form action="/action_page.php">
+    <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="FormGroup">
+                <label for="name">Nombre Autor :</label>
+                <input type="text" class="form-control" id="autor" required [(ngModel)]="autor.autor" name="autor"
+                    placeholder=" Nombre y apellido..">
+            </div>
+    
+            <div class="form-group">
+                <label for="name">Nombre Usuario : </label>
+                <input type="text" class="form-control" id="usuario" required [(ngModel)]="autor.usuario"
+                    name="usuario" placeholder=" example:Juan1232..">
+            </div>
+            <div class="form-group">
+                <label for="name">Cuenta Twitter :</label>
+                <input type="text" class="form-control" id="twitter" required [(ngModel)]="autor.twitter" name="twitter" placeholder="example: @user133..">
+            </div>
+            <div class="form-group">
+                <label for="name">Cuenta Facebook :</label>
+                <input type="text" class="form-control" id="facebook" required [(ngModel)]="autor.facebook" name="facebook"
+                    placeholder="  example user123@example.com ..">
+            </div>
+            <div class="form-group">
+                <label for="name">Cuenta Instagram :</label>
+                <input type="text" class="form-control" id="instagram" required [(ngModel)]="autor.instagram" name="instagram"
+                    placeholder=" user564_3..">
+            </div>
+            <div class="form-group">
+                <label for="name">Descripción :</label>
+                <input type="text" class="form-control" id="descripcion" required [(ngModel)]="autor.descripcion" name="descripcion"   placeholder=" text.....">
+            </div>
+            <button type="menu" class="btn btn-outline-danger" (click)="noSubmit()">Regresar</button>
+            <button type="submit" class="btn btn-outline-success" >Continuar</button>
+           
+        </form>
+    </div>
+    <div [hidden]="!submitted">
+        <div class="alert alert-success">
+            <strong>Informacion Registrada exitosamente!</strong>
+        </div>
+
+        <div class="toast">
+            <div class="toast-header">
+                Toast Header
+            </div>
+            <div class="toast-body">
+                Some text inside the toast body
+            </div>
+        </div>
+        <button class="btn btn-outline-success" (click)="newAutor()">Add</button>
+    </div>
+    </form>
+</div>
+<br>
