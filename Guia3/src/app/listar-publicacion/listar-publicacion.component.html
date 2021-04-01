@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Listado de Publicaciones</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Noticia</th>
+            <th>Descripción</th>
+            <th>Fecha de publicacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let noticia of noticia | async">
+            <td>{{noticia.titulo}}</td>
+            <td>{{noticia.cuerpo}}</td>
+            <td>{{noticia.fechapbl}}</td>
+            <td><button (click)="deleteNoticia(noticia.id)" class="btn btn-danger " disabled>Eliminar</button>
+                <button (click)="noticiaDetails(noticia.id)" class="btn btn-info" style="margin-left: 10px">Detalles</button>
+                <button (click)="noticiaUpdate(noticia.id)" class="btn btn-warning" style="margin-left: 10px">Actualizar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
